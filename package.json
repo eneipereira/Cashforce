@@ -1,0 +1,12 @@
+{
+  "name": "teste-cashforce",
+  "version": "1.0.0",
+  "description": "Teste técnico para vaga de Dev Junior na Cashforce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Enei Pereira Junior",
+  "license": "ISC"
+}
