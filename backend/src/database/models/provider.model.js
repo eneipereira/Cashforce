@@ -54,6 +54,7 @@ module.exports = (sequelize) => {
 
   Provider.associate = (models) => {
     Provider.hasMany(models.Order, { foreignKey: "providerId", as: "provider" })
+    Provider.belongsTo(models.Cnpj, { foreignKey: "cnpjId", as: "CNPJ" })
   }
 
   return Provider;
