@@ -1,0 +1,68 @@
+.conteudo {
+  box-shadow: 0px 10px 30px rgba(225, 229, 236, 0.5);
+  border-radius: 15px 0px 0px 15px;
+}
+
+.header {
+  width: 1272px;
+  height: 64px;
+  left: 288px;
+  border-bottom: 1px solid #DFE2EB;
+}
+
+.table-header {
+  padding-left: 48px;
+  padding-top: 14px;
+}
+
+.table-header h2 {
+  color: #021B51;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.table-header h2 > span {
+  margin-left: 10px;
+}
+
+.table-header > span {
+  color: #727D94;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+table thead {
+  display: flex;
+}
+
+table thead tr {
+  color: #A1A8B8;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  padding: 10px 20px;
+}
+
+table button {
+  color: #CAD3FF;
+  padding: 8px 29px;
+  border: 1px solid #CAD3FF;
+  border-radius: 24px;
+}
+
+p {
+  color: #727D94;
+}
+
+.green {
+  color: #00AD8C;
+}
