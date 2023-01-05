@@ -1,14 +1,21 @@
 version: '3.9'
 
 services:
+  frontend:
+    container_name: cashforce_front
+    build: ./frontend
+    ports:
+      - 3000:80
+    depends_on:
+      backend:
+        condition: service_healthy
   backend:
     container_name: cashforce_back
     build: ./backend
-    working_dir: /app
-    command: npm run dev
     restart: always
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - 3001:3001
     environment:
@@ -17,13 +24,23 @@ services:
       - MYSQL_PASSWORD=123456
       - MYSQL_HOST=db
       - MYSQL_PORT=3306
+    healthcheck:
+      test: [ "CMD", "curl", "http://localhost:3001/health" ]
+      timeout: 10s
+      retries: 10
     volumes:
       - ./backend/src:/app/src
+    command: bash -c "npm run db && npm run dev"
   db:
     container_name: db
     image: mysql:5.7
-    ports:
-      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     restart: always
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-proot" ]
+      timeout: 10s
+      retries: 10
+      start_period: 10s
