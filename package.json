@@ -4,7 +4,8 @@
   "description": "Teste técnico para vaga de Dev Junior na Cashforce",
   "main": "index.js",
   "scripts": {
-    "compose": "(cd backend && docker-compose down --remove-orphans && docker-compose up -d --build)",
+    "compose:up": "(cd backend && docker-compose down --remove-orphans && docker-compose up -d --build)",
+    "compose:down": "(cd backend && docker-compose down)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
